@@ -31,8 +31,10 @@ app.use(cookieParser());
 app.use(session({
     secret: 'keyboard cat',
     store: new MongoStore ({
-      mongoUrl: process.env.MONGODB_URI,
-    }),
+        mongoUrl: process.env.MONGODB_URI,
+        databaseName: "myFirstDatabase",
+        collection: "sessions"
+      }),
     cookie: { 
 		secure: true,
 		maxAge: 60000 
