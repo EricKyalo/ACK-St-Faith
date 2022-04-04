@@ -30,14 +30,14 @@ app.use(methodOverride("_method"))
 app.use(cookieParser());
 app.use(session({
     secret: 'keyboard cat',
+    resave: false, // don't save session if unmodified
+    saveUninitialized: false, // don't create session until something stored
     store: MongoStore.create({ 
       mongoUrl: process.env.MONGODB_URI, }),
     cookie: { 
 		secure: true,
 		maxAge: 60000 
-	},
-    resave: false, // don't save session if unmodified
-    saveUninitialized: false, // don't create session until something stored
+	}
   }));
   app.use(flash());
 
