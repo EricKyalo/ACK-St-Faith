@@ -1,0 +1,43 @@
+<!-- new sermon view page -->
+<section class="new-sermon about-txt">
+  <div class="container pt-3 pb-5 px-3">
+      <h1 class="pb-3">New Sermon</h1>
+      <form action="/sermonCreate" method="POST">
+  
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" value="<%= sermon.title %>" class="form-control" id="title" name="title" aria-describedby="title" required>
+          </div>
+  
+          <div class="mb-3">
+              <label for="theme" class="form-label">Theme</label>
+              <input type="text" value="<%= sermon.theme %>" class="form-control" id="theme" name="theme" required>
+            </div>
+      
+          <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" value=" <%= sermon.date %>" class="form-control" id="date" name="date" required>
+          </div>
+        
+          <div class="mb-3">
+              <label for="preacher" class="form-label">Preacher</label>
+              <input type="text" value="<%= sermon.preacher %>" class="form-control" id="preacher" name="preacher" aria-describedby="preacher" required>
+            </div>
+  
+            <div class="mb-3">
+              <label for="sermon" class="form-label">Sermon</label>
+              <textarea name="sermon" class="form-control" id="sermon" required><%= sermon.sermon %> </textarea>
+            </div>
+      
+          <button type="submit" class="btn btn-primary">Save</button>
+  
+      </form>
+  
+        <div class="mt-4">
+          <a href="/admin" class="btn btn-warning">Manage Sermons</a>
+          <button type="submit" class="btn btn-danger mx-2">Log Out</button>
+        </div>
+        
+  </div>
+  </section>
+  

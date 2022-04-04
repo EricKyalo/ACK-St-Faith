@@ -1,0 +1,24 @@
+<form class="d-flex px-5 pt-3 about-txt" action="/search" method="POST">
+    <input class="form-control me-2 active" type="search" name="searchTerm" placeholder="Search Sermon" aria-label="Search">
+    <button class="btn btn-dark text-light btn-outline-dark" type="submit" required=true>Search</button>
+</form>
+     
+<section class="sermons px-3 pt-5 about-txt">
+<% sermon.forEach(function (sermon) { %>
+<div class="card px-4 py-5 mb-5">
+    <h1 class="mb-3"> <%= sermon.title %></h1>
+    <h5>Theme of the Month: <%=sermon.theme%> </h5>
+    <h6 class="text-muted pt"> <%=sermon.date%> </h6>
+    <h3 class="py-3"> <%=sermon.preacher%> </h3>
+    <p class="about-txt"> 
+        <% if (sermon.sermon.length >= 300) { %> 
+          <%= sermon.sermon.slice(0, 300) + " ..."  %> 
+        <% } %> 
+    </p>
+<div>
+    <a href="/sermon/<%= sermon.slug %>" class="btn btn-outline">Read More</a> 
+</div>
+</div>
+<% }) %> 
+</section>
+

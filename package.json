@@ -1,0 +1,41 @@
+{
+  "name": "ack-st.-faith",
+  "version": "1.0.0",
+  "description": "ACK St. Faith Church",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Church",
+    "ACK",
+    "St.",
+    "Faith",
+    "word",
+    "of",
+    "God",
+    "parish"
+  ],
+  "author": "Eric Kyalo",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.8.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "marked": "^4.0.12",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.2.2",
+    "nodemon": "^2.0.15",
+    "slugify": "^1.6.5"
+  }
+}

@@ -1,0 +1,264 @@
+
+  <!-- Header Section-Carousel -->
+  <section class="carousel-section" >
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/navph1.jpg" class="img-head d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/navph2.jpg" class="img-head d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/navph3.jpg" class="img-head d-block w-100 img-fluid" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </section>
+
+  <!-- About St. Faith -->
+  <section class="about">
+    <div class="container-fluid">
+      <h1 class="pt-5 md-pt-3 text-center pb-3 about-txt">Welcome to St. Faith Church</h1>
+      <div class="row">
+        <div class="col-md-8 about-txt text-center py-md-5 px-3">
+
+      <p>
+        Our love for you goes beyond words. We are continously praying for you and are honored to serve you with timely messages that have the ability and power to transform lives all to His Glory.
+      </p>
+
+      <p>
+        From the believer who has walked with God for many years, to the seeker who has not yet given their life to Christ, ACK St. Faith Church Civil Servants is your church.
+      </p>
+  
+      <p>
+        We believe God is still who He was in the ancient days, and He will remain to be so even in the future. He is still in the business of answering prayers and changing His people's situations for the better
+      </p>
+      <button type="button" class="btn btn-outline mt-3 mb-4">Watch Live Service</button>
+
+    </div>
+      <div class="col-md-4 pb-5">
+        <div class="container text-center">
+        <h3 class="about-side"><em>Services</em></h3>
+            <h5>Main Service</h5>
+            <p 
+              class="px-md-3 about-txt">Every Sunday - 9:00 AM
+            </p>
+            <h5>Mid-week Service</h5>
+            <p 
+              class="px-md-3 about-txt">Wednesday's 6:30 PM - 7:30 PM
+            </p>
+            <h5>Estate Fellowships</h5>
+            <p class="px-md-3 about-txt">
+              Thursday evening
+            </p> 
+        </div>
+        
+        <div class="container text-center">
+        <h4 class="about-side text-center"><em>Vicar's Office Days</em></h3>
+        <p class="px-md-3 about-txt">Tuesday and Wednesday.</p>
+        <h5>Pastoral Visits</h5>
+        <p class="px-md-3 about-txt">
+          Thursdays and Fridays.
+        </p> 
+      <h6 class="py-md-3 px-2 text-center about-txt"><em>
+        For enquiries call the church office or the Vicar. Find contact details below.</em>
+      </h6>
+      </div>
+       
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Follow Church Sermons -->
+  <section class="sermon">
+    <div class="container-fluid">
+      <h1 class="pt-5 text-center about-txt">Never Miss A Sermon</h1>
+      <div class="row p-5 pt-4 gy-4">
+        <div class="col-md">
+          <img src="images/word.jpg" class="img-sermon img-fluid" alt="">
+        </div>
+        <div class="col-md sermon-font container px-3">
+          <%  if(typeof sermon !== "undefined") { %>
+            
+            <h3 class="fw-bold mb-3 about-txt"> <%= sermon.title %> </h3>
+            <h5 class="about-txt">Theme of the Month: <%=sermon.theme%> </h5>
+            <h6 class="fw-bold text-muted"> <%= sermon.date %> </h6>
+            <h5 class="fw-bold my-3 about-txt"> <%= sermon.preacher %> </h5>
+            <p class="about-txt"> 
+              <% if (sermon.sermon.length >= 300) { %> 
+                <%= sermon.sermon.slice(0, 300) + " ..."  %> 
+              <% } %> 
+            </p>
+
+            <a href="/sermon/<%= sermon.slug %>" class="btn    btn-outline about-txt">Read More</a> 
+               
+          <% } %> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </section> 
+
+  <!-- Ministries -->
+  <section id="ministries" class="text-center pb-5">
+    <h1 class="pt-5 text-center pb-3 about-txt">Our Ministries</h1>
+    
+<div class="container">
+
+  <div class="grid-wrapper">
+      <div class="card1 fellowship">
+          <h3 class="fw-bold">Estate Fellowships</h3>
+          <p class="px-5 pb-0">Estate fellowships meet in small groups to worship together and encourage each other.</p>
+          <p class="fs-5">Join one near you today</p>
+        <a href="#" class="btn btn-outline-light">Find Out More</a> 
+      </div>
+
+      <div class="card2 men hover-zoom">
+        <h3 class="fw-bold">K.A.M.A</h3>
+        <p class="text-start">A ministry bringing together all men in fellowship to learn God's word, empowerment & build the church as they lead themselves and their families to Christ.</p>
+      </div>
+
+      <div class="card3 mothers">
+        <h3 class="fw-bold">Mother's Union</h3>
+        <p class="text-start">A society of women mother or not; supporting one another morally and spiritually.</p>
+      </div>
+
+      <div class="card3 teens">
+      <h3 class="fw-bold">Teens</h3>
+      <p class="text-start">Providing guidance, meaning and much needed support during this volatile period of their lives according to God's word.</p>
+      </div>
+
+      <div class="card3 youth">
+      <h3 class="fw-bold">Youth</h3>
+      <p class="text-start">Teaching young people in the church to grow, build and invest in their relationship with the Lord</p>
+      </div>
+
+      <div class="card3 kids">
+        <h3 class="fw-bold">Sunday School</h3>
+        <p class="text-start">Train up a child in the way he should go: and when he is old, he will not depart from it.</p>
+      </div>
+
+ </div>
+    </div>
+  </section>
+
+  <!-- Giving -->
+  <section id="give" class="giving">
+    <div class="container">
+      <h1 class="h1 p-5 pb-3 text-center about-txt">Giving</h1>
+      <div class="row"> 
+        <div class="col px-4">
+      <p class="text about-txt">
+        Dear believer we thank you for being here and for considering to give towards this ministry. It is by your giving that the church is sustained.
+      </p>
+
+      <p class="text-center"><em>
+        Malachi 3:10a<br>“Bring the whole tithe into the storehouse, so that there may be food in My house"</em>
+      </p>
+      
+      <p class="text about-txt">
+        At St. Faith Church we believe that giving our all to Jesus - our time, talents, treasures and money is evidence of not only our obedience, but also our love, faith and trust in Him. So be cheerful as you give.
+      </p>
+
+      <p class=" pb-3 text text-center"><em>
+        Luke 6:38<br>"Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you.”</em>
+      </p>
+    </div>
+      <div class="account-details pt-4 pb-5 px-3 col-md">
+        <div class="wrapper p-4 text-center">
+        <button class="btn btn-dark lead px-4 my-2 give-details text-center">Equity Bank Details</button>
+        <div class="pt-2 text-center">
+        <p class="bold lead text-light"><span class="text-dark">Account Number: </span> 000012002304</p>
+  
+        <p class="bold lead text-light"><span class="text-dark">Account Number: </span>000012002304</p>
+        </div>
+    
+        <button class="btn btn-success lead px-4 mb-2 give-details">Mpesa</button>
+        <div class="pt-2 text-center">
+        <p class="bold lead text-light"><span class="text-dark">Paybill: </span>763766</p>
+
+        <p class="bold lead text-light"><span class="text-dark">Account Number: </span>242716</p>
+      </div>
+      </div>
+     </div>
+    </div>
+        
+    <div>
+  </section>
+
+  <!-- Location & Contacts -->
+  <section id="contacts" class="map-contacts">
+    <div class="container">
+      <h1 class="h1 p-5 pb-4 text-center about-txt">Contacts</h1>
+      <div class="row">
+        <div class="col p-5 pt-0 container text-center">
+            <h5>Office Number</h5>
+            <p class="px-3 about-txt">0799 848 747</p>
+            <h5>Vicar's Number</h5>
+              <p class="px-3 about-txt">0724 271 659</p>
+              <h5>Address</h5>
+                <p class="px-3 about-txt">P.O BOX 1790-00200</p>
+                <p>
+                  <a href="tel:0799848747" class="btn btn-dark mx-2" type="submit">Call Office</a>
+                  <a href="tel:0724271659" class="btn btn-color" type="submit">Call Vicar</a>
+                </p>
+        </div>
+      
+        <div class="col map pb-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3354.2040537038074!2d36.883908737714066!3d-1.2666919169445812!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf296a95d6476774c!2sACK%20ST%20FAITH%20KARIOBANGI%20SOUTH%20CIVIL%20SERVANTS!5e0!3m2!1sen!2ske!4v1645350953056!5m2!1sen!2ske" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+  </section>
+
+  <!-- Core Pillars -->
+  <section class="pillars about-txt">
+  <div class="containers pt-3 pb-5">
+    <h1 class="pt-5 pb-4 text-center">Our Core Pillars</h1>
+      <div class="container d-flex justify-content-around p-4 pt-0">
+        <div class="text-center">
+          <i class="fa fa-book p-3 pt-0 icons text-primary" aria-hidden="true"></i>
+          <p class="pillar-icons">Word</p>
+        </div>
+        <div class="text-center">
+        <i class="fa fa-music p-3 pt-0 icons text-primary" aria-hidden="true"></i>
+        <p class="pillar-icons">Worship</p>
+        </div>
+        <div class="text-center">
+        <i class="fa fa-anchor p-3 pt-0 icons text-primary" aria-hidden="true"></i>
+        <p class="pillar-icons">Prayer</p>
+        </div>
+        <div class="text-center">
+          <i class="fa fa-users p-3 pt-0 icons text-primary" aria-hidden="true"></i>
+          <p class="pillar-icons">Fellowship</p>
+          </div>
+      </div>
+  </div>
+  </section>
+
