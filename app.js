@@ -30,7 +30,7 @@ app.use(methodOverride("_method"))
 app.use(cookieParser());
 app.use(session({
     secret: 'keyboard cat',
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+    store: new MongoStore({ mongoUrl: process.env.MONGODB_URI }),
     cookie: { 
 		secure: true,
 		maxAge: 60000 
