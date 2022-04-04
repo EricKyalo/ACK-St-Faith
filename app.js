@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(session({
     secret: 'keyboard cat',
     store: new MongoDBStore ({
-        uri: process.env.MONGODB_URI ,
+        uri: "mongodb+srv://Eric:eric1080@cluster0.xvcze.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
         databaseName: "myFirstDatabase",
         collection: "sessions"
       }),
