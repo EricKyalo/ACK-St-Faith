@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const methodOverride = require("method-override")
 const flash = require("connect-flash")
-const MongoStore = require('connect-mongo');
+const MongoStore = require("connect-mongo");
 
 // activating express
 const app = express();
@@ -30,7 +30,8 @@ app.use(methodOverride("_method"))
 app.use(cookieParser());
 app.use(session({
     secret: 'keyboard cat',
-    store: new MongoStore({ mongoUrl: process.env.MONGODB_URI }),
+    store: MongoStore.create({ 
+      mongoUrl: process.env.MONGODB_URI, }),
     cookie: { 
 		secure: true,
 		maxAge: 60000 
