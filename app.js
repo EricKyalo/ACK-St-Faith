@@ -11,7 +11,7 @@ const MongoStore = require("connect-mongo");
 const app = express();
 
 // requiring .env file
-require("dotenv").config();
+require("dotenv").config({ path: "./.env "});
 
 //mongo connection
 const connectDB = require("./server/database/database.js");
