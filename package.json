@@ -4,9 +4,12 @@
   "description": "ACK St. Faith Church",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "16.13.0"
   },
   "keywords": [
     "Church",
