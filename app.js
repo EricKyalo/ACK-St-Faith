@@ -32,7 +32,8 @@ app.use(session({
     resave: false, // don't save session if unmodified
     saveUninitialized: false, // don't create session until something stored
     store: MongoStore.create({ 
-      mongoUrl: process.env.MONGODB_URI, }),
+      mongoUrl: process.env.MONGODB_URI,
+      dbName: "myFirstDatabase" }),
     cookie: { 
 		secure: true,
 		maxAge: 60000 
