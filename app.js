@@ -11,9 +11,7 @@ const MemoryStore = require("memorystore");
 const app = express();
 
 // requiring .env file
-require("dotenv").config({ path: "./.env "});
-
-//mongo connection
+require("dotenv").config()//mongo connection
 const connectDB = require("./server/database/database.js");
 const { route } = require("./server/routes/index");
 connectDB();
