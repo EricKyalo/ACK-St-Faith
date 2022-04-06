@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const methodOverride = require("method-override")
 const flash = require("connect-flash");
-const MongoStore = require("connect-mongo");
+const MemoryStore = require("memorystore");
 
 // activating express
 const app = express();
@@ -25,17 +25,19 @@ app.use(express.urlencoded({ extended: false }));
 // method override
 app.use(methodOverride("_method"))
 
-// setting up sessions
+// setting up sessions || memoryStore
 app.use(cookieParser());
 app.use(session({
     secret: 'keyboard cat',
-    resave: false, // don't save session if unmodified
-    saveUninitialized: true, // don't create session until something stored
-    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI,}),
     cookie: { 
 		secure: true,
 		maxAge: 60000 
-	}
+	},
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  resave: false, // don't save session if unmodified
+  saveUninitialized: false, // don't create session until something stored
   }));
   app.use(flash());
 
